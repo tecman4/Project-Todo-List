@@ -1,15 +1,16 @@
-let content = document.querySelector("#content")
-let value = document.querySelector("#value");
-let input = document.querySelector("#priority");
-value.textContent = input.value;
-input.addEventListener("input", (event) => {
-  value.textContent = event.target.value;
+let title = document.querySelector("#title")
+let description = document.querySelector("#description");
+let dueDate = document.querySelector("#dueDate");
+let priority = document.querySelector("#priority");
+let range = document.querySelector("#range");
+const form = document.querySelector("#toDoForm");
+priority.textContent = range.value;
+
+range.addEventListener("input", (event) => {
+  priority.textContent = event.target.value;
 
 
 });
-
-function newTODO(){
-
-  content.innerHTML= title.value
-  return;
-  }
+form.addEventListener("submit", (event) => {
+  console.log(title.value);
+});
