@@ -12,5 +12,5 @@ range.addEventListener("input", (event) => {
 
 });
 form.addEventListener("submit", (event) => {
-  console.log(title.value);
+  console.log(title.value, " ", description.value, " ",dueDate.value, " ",priority.value );
 });
