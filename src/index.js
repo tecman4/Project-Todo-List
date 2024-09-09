@@ -4,6 +4,7 @@ let dueDate = document.querySelector("#dueDate");
 let priority = document.querySelector("#priority");
 let range = document.querySelector("#range");
 const form = document.querySelector("#toDoForm");
+let content = document.querySelector("#content");
 priority.textContent = range.value;
 
 range.addEventListener("input", (event) => {
@@ -13,4 +14,5 @@ range.addEventListener("input", (event) => {
 });
 form.addEventListener("submit", (event) => {
   console.log(title.value, " ", description.value, " ",dueDate.value, " ",priority.value );
+  content = 
 });
