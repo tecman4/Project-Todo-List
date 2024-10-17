@@ -3,6 +3,8 @@ let description = document.querySelector("#description");
 let dueDate = document.querySelector("#dueDate");
 let priority = document.querySelector("#priority");
 let range = document.querySelector("#range");
+window.removeToDo= removeToDo;
+window.edit= edit;
 
 const form = document.querySelector("#toDoForm");
 let content = document.querySelector("#content");
@@ -11,6 +13,10 @@ const myToDo = [];
 
 function removeToDo(index){
   console.log(index)
+  myToDo.splice(index,1)
+  render();
+}
+function edit(index){
   myToDo.splice(index,1)
   render();
 }
