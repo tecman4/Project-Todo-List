@@ -5,18 +5,33 @@ let priority = document.querySelector("#priority");
 let range = document.querySelector("#range");
 window.removeToDo= removeToDo;
 window.edit= edit;
-
+localStorageRetrieve();
 const form = document.querySelector("#toDoForm");
 let content = document.querySelector("#content");
 priority.textContent = range.value;
 const myToDo = [];
+localStorageRetrieve();
+
+function localStorageSave(){
+  localStorage.setItem('myToDo', JSON.stringify(myToDo));
+}
+function localStorageRetrieve(){
+  if (localStorage.getItem('myToDo') !== null) {
+  let myToDo = JSON.parse(localStorage.getItem('myToDo'));
+  render();
+  }
+}
 
 function removeToDo(index){
-  console.log(index)
   myToDo.splice(index,1)
   render();
 }
 function edit(index){
+  const toDo = myToDo[index];
+  document.querySelector("#title").value = toDo.title;
+  document.querySelector("#description").value = toDo.description;
+  document.querySelector("#dueDate").value = toDo.dueDate;
+  document.querySelector("#priority").value = toDo.priority;
   myToDo.splice(index,1)
   render();
 }
@@ -48,6 +63,7 @@ function render(){
     </div>
 `
     libraryEl.appendChild(bookEl);
+    localStorageSave();
   }
 }
 
@@ -59,7 +75,9 @@ function addToDo() {
   let priority = document.querySelector("#priority").value
 let newToDo = new toDo(title, description, dueDate, priority);
 myToDo.push(newToDo);
+form.reset();
 render();
+
 }
 
 
