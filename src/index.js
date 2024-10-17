@@ -5,22 +5,23 @@ let priority = document.querySelector("#priority");
 let range = document.querySelector("#range");
 window.removeToDo= removeToDo;
 window.edit= edit;
-localStorageRetrieve();
 const form = document.querySelector("#toDoForm");
 let content = document.querySelector("#content");
 priority.textContent = range.value;
-const myToDo = [];
+var myToDo = [];
 localStorageRetrieve();
-
 function localStorageSave(){
+
   localStorage.setItem('myToDo', JSON.stringify(myToDo));
 }
+
 function localStorageRetrieve(){
-  if (localStorage.getItem('myToDo') !== null) {
-  let myToDo = JSON.parse(localStorage.getItem('myToDo'));
-  render();
+
+  let storedToDos = JSON.parse(localStorage.getItem('myToDo'));
+  if (storedToDos !== null) {
+  myToDo = storedToDos;
+  render();  }
   }
-}
 
 function removeToDo(index){
   myToDo.splice(index,1)
