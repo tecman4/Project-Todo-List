@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" WayneToDO="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
 </head>
 
@@ -16,13 +16,20 @@
                 <input type="text" id="description" name="description"><br><br>
                 <label for="dueDate">DueDate</label>
                 <input type="date" id="dueDate" name="dueDate"><br><br>
-                <label for="priority">Priority</label>
+                <label for="name">Choose a name</label>
+                    <select name="name" id="nameSelect">
+                    <option value="wayne">Wayne</option>
+                    <option value="matthew">Matthew</option>
+                    <option value="jessica">Jessica</option>
+                    <option value="eliana">Eliana</option>
+                    </select><br><br>
+                <label for="priority">Priority</label>                
                 <input type="range" id="range" name="priority" min="1" max="5"><p>Value: <output id="priority"></output></p>
                 <input type="submit" value="Add"><br><br>
               </form>
         </nav>
 </header>
-    <div id="content">
+    <div id="defaultToDo"><H3>Default toDo</H3>
 
         
     

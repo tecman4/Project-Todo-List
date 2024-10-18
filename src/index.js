@@ -6,8 +6,8 @@ let range = document.querySelector("#range");
 window.removeToDo= removeToDo;
 window.edit= edit;
 const form = document.querySelector("#toDoForm");
-let content = document.querySelector("#content");
-priority.textContent = range.value;
+let defaultToDo = document.querySelector("#defaultToDo");
+priority.textdefaultToDo = range.value;
 var myToDo = [];
 localStorageRetrieve();
 function localStorageSave(){
@@ -45,7 +45,7 @@ function toDo(title,description,dueDate, priority) {
 }
 
 function render(){
-  let libraryEl = document.querySelector("#content")
+  let libraryEl = document.querySelector("#defaultToDo")
   libraryEl.innerHTML = "";
   for(let i=0;i< myToDo.length;i++){
 
@@ -83,7 +83,7 @@ render();
 
 
 range.addEventListener("input", (event) => {
-  priority.textContent = event.target.value;
+  priority.textdefaultToDo = event.target.value;
 
 
 });
